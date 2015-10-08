@@ -1,0 +1,205 @@
+//===============================================================================
+// IMPORTS
+//===============================================================================
+// normalize.css v3.0.0 | MIT License | git.io/normalize
+@import "_normalize.scss";
+
+// define mixins & functions
+@import "_mixins.scss";
+
+//===============================================================================
+// VARIABLES
+//===============================================================================
+$paper:  hsl(220,12,20);
+$ink:    black;
+
+$pc-pink:   #ee4f73;
+$pc-purple: #9b5ca4;
+$pc-blue:   #0ea2dc;
+$pc-aqua:   #37bec0;
+$pc-green:  #a4ce4e;
+$pc-orange: #faad40;
+
+//===============================================================================
+// BASCIS
+//===============================================================================
+// box-sizing everywhere and webkit text rendering correction
+*,
+*::before,
+*:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+// remove padding & list styles from all <ul> as default
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+html,
+body {
+  background-color: $paper;
+  color: $ink;
+  font-family: sans-serif;
+  line-height: 1.4;
+  width: 100%;
+  height: 100%;
+  background-image: url("/img/illi-tile-v2-white.png");
+}
+
+//===============================================================================
+// STYLES
+//===============================================================================
+$rows: 4;
+$columns: 7;
+.grid {
+  @include clearfix;
+  position: fixed;
+  width: 159vh;
+  height: 100%;
+  top: 1vh;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+  margin: 0;
+}
+
+.item,
+.spacer-item {
+  float: left;
+  width: (90vh / $rows * .75);
+  height: (90vh / $rows);
+  margin: 1vh 1.5vh;
+}
+
+.item {
+  transition: transform .25s;
+  border-radius: 2px;
+  overflow: hidden;
+  z-index: 9999;
+
+  &:hover {
+    transform: scale(2.5);
+    box-shadow: 0 0 8vh 1vh black;
+  }
+
+  &:nth-child(1):hover {
+    transform: scale(2.5) translate(30%, 30%);
+  }
+
+  &:nth-child(n+2):nth-child(-n+7):hover {
+    transform: scale(2.5) translate(0, 30%);
+  }
+
+  &:nth-child(8):hover {
+    transform: scale(2.5) translate(-30%, 30%);
+  }
+
+  &:nth-child(9):hover,
+  &:nth-child(17):hover, {
+    transform: scale(2.5) translate(30%, 0);
+  }
+
+  &:nth-child(16):hover,
+  &:nth-child(24):hover, {
+    transform: scale(2.5) translate(-30%, 00);
+  }
+
+  &:nth-child(25):hover {
+    transform: scale(2.5) translate(30%, -30%);
+  }
+
+  &:nth-child(n+26):nth-child(-n+31):hover {
+    transform: scale(2.5) translate(0, -30%);
+  }
+
+  &:nth-child(32):hover {
+    transform: scale(2.5) translate(-30%, -30%);
+  }
+
+}
+
+.spacer-item {
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-size: 12vh;
+  background-position: center 1vh;
+  position: relative;
+  z-index: -1;
+
+  span {
+    font-size: 7vh;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+  }
+
+  &.WFH {
+    color: $pc-blue;
+    background-image: url("/img/wfh.svg");
+  }
+
+  &.Office {
+    color: $pc-pink;
+    background-image: url("/img/office.svg");
+  }
+
+  &.Holiday {
+    color: $pc-orange;
+    background-image: url("/img/holiday.svg");
+  }
+
+  &.Absent {
+    color: $pc-aqua;
+    background-image: url("/img/sick.svg");
+  }
+}
+
+.mugshot {
+  width: 100%;
+  height: 75%;
+  background-color: hsl(220, 5, 94);
+  display: block;
+}
+
+.meta {
+  background-color: hsl(220,2,94);
+  width: 100%;
+  height: 25%;
+  color: white;
+
+  .io & {
+    background-color: $pc-pink;
+  }
+
+  .wfh & {
+    background-color: $pc-blue;
+  }
+
+  .oh & {
+    background-color: $pc-orange;
+  }
+
+  .absent & {
+    background-color: $pc-aqua;
+  }
+}
+
+.name,
+.status {
+  display: block;
+  line-height: 1.2;
+  padding-left: .75vh;
+}
+
+.name {
+  font-weight: bold;
+  padding-top: .75vh;
+  font-size: 2vh;
+}
+
+.status {
+  font-size: 1.75vh;
+}

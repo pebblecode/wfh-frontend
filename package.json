@@ -1,0 +1,135 @@
+{
+  "name": "wfh-frontend",
+  "version": "0.0.16",
+  "config": {
+    "buildDir": "./build",
+    "buildDirTests": "./build_tests",
+    "devHost": "localhost",
+    "devPort": 8000
+  },
+  "scripts": {
+    "build": "NODE_ENV=production npm run webpack",
+    "clean": "rimraf $npm_package_config_buildDir && mkdir $npm_package_config_buildDir",
+    "env": "env",
+    "lint": "eslint --ext .js --ext .jsx ./app ./webpack && echo No linting errors.",
+    "prebuild": "npm run clean",
+    "prestart": "npm install",
+    "pretest": "npm install && npm run lint",
+    "pretest-travis": "npm install && npm run lint",
+    "start": "NODE_ENV=development node dev-server ./webpack/config",
+    "test": "NODE_ENV=test karma start",
+    "test-travis": "NODE_ENV=test karma start --single-run",
+    "webpack": "webpack --colors --progress --config ./webpack/config"
+  },
+  "dependencies": {
+    "deep-equal": "^1.0.1",
+    "es6-promise": "^3.0.2",
+    "fetch": "^0.3.6",
+    "flux": "^2.1.1",
+    "immutable": "^3.7.5",
+    "normalize.css": "^3.0.3",
+    "qs": "^5.2.0",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-router": "^1.0.0-rc2",
+    "whatwg-fetch": "^0.9.0"
+  },
+  "devDependencies": {
+    "autoprefixer-core": "^5.2.1",
+    "babel-core": "^5.8.3",
+    "babel-eslint": "^3.1.23",
+    "babel-loader": "^5.3.1",
+    "babel-plugin-rewire": "^0.1.8",
+    "babel-runtime": "^5.6.15",
+    "chai": "^3.0.0",
+    "css-loader": "^0.15.2",
+    "eslint": "^0.24.0",
+    "eslint-plugin-react": "^2.6.4",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
+    "flowcheck": "^0.2.7",
+    "flowcheck-loader": "^1.0.0",
+    "glob": "^5.0.13",
+    "html-loader": "^0.3.0",
+    "json-loader": "^0.5.2",
+    "karma": "^0.12.37",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-cli": "0.1.0",
+    "karma-mocha": "^0.2.0",
+    "karma-mocha-reporter": "^1.0.2",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "karma-sinon": "^1.0.4",
+    "karma-source-map-support": "^1.0.0",
+    "karma-sourcemap-loader": "^0.3.5",
+    "karma-webpack": "^1.5.1",
+    "lodash": "^3.10.0",
+    "mocha": "^2.2.5",
+    "mocha-loader": "^0.7.1",
+    "node-libs-browser": "^0.5.2",
+    "node-sass": "^3.2.0",
+    "opn": "^3.0.2",
+    "phantomjs": "^1.9.17",
+    "postcss-loader": "^0.5.1",
+    "react-hot-loader": "^1.2.8",
+    "rimraf": "^2.4.1",
+    "sass-loader": "^1.0.2",
+    "sinon": "^1.15.4",
+    "source-map-support": "^0.3.2",
+    "style-loader": "^0.12.3",
+    "template-html-loader": "0.0.3",
+    "webpack": "^1.10.1",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
+    "ecmaFeatures": {
+      "modules": true,
+      "jsx": true
+    },
+    "globals": {
+      "describe": true,
+      "it": true,
+      "sinon": true
+    },
+    "parser": "babel-eslint",
+    "plugins": [
+      "react"
+    ],
+    "rules": {
+      "strict": [
+        2,
+        "global"
+      ],
+      "indent": [
+        2,
+        2
+      ],
+      "quotes": [
+        2,
+        "single"
+      ],
+      "no-underscore-dangle": 0,
+      "react/display-name": 0,
+      "react/jsx-quotes": 1,
+      "react/jsx-no-undef": 1,
+      "react/jsx-sort-props": 1,
+      "react/jsx-uses-react": 1,
+      "react/jsx-uses-vars": 1,
+      "react/no-did-mount-set-state": 1,
+      "react/no-did-update-set-state": 1,
+      "react/no-multi-comp": 1,
+      "react/no-unknown-property": 1,
+      "react/prop-types": 0,
+      "react/react-in-jsx-scope": 1,
+      "react/self-closing-comp": 1,
+      "react/wrap-multilines": 1
+    }
+  }
+}
