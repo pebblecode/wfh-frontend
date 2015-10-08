@@ -4,15 +4,11 @@ import React from 'react';
 
 import './_Status.scss';
 
-const Status = React.createClass({
-  render() {
-      console.log('render');
-    return (
-      <li className={'item ' + this.props.status.statusType }>
-        {this.props}
-      </li>
-    );
-  }
-})
-
-export default Status;
+export default (props) => {
+  return (
+    <li className={'item ' + props.status.statusType }>
+      <h1> {props.name} </h1>
+      <p> {props.status.statusType} </p>
+    </li>
+  );
+};
