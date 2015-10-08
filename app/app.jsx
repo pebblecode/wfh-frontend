@@ -8,13 +8,15 @@ import './scss/app.scss';
 
 import React from 'react';
 import {render} from 'react-dom';
-import Router, {Route, DefaultRoute} from 'react-router';
+import Router, {Route, IndexRoute} from 'react-router';
 
 import App from './components/App/App';
+import HomePage from './components/HomePage/HomePage';
 
 render(
   <Router>
     <Route path="/" component={App}>
+      <IndexRoute component={HomePage} />
     </Route>
   </Router>,
   document.getElementById('app'));
