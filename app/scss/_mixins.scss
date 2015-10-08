@@ -1,0 +1,37 @@
+// CLEAR FIX
+// @include clearfix;
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// APPEARANCE
+// @include apperance;
+@mixin appearance( $value: none ) {
+  -webkit-appearance: $value;
+     -moz-appearance: $value;
+          appearance: $value;
+}
+
+// HIDE TEXT
+// @include hide-text;
+@mixin hide-text {
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+}
+
+// MARGIN AUTO
+// @include margin-auto;
+@mixin margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
