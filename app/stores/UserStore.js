@@ -1,6 +1,6 @@
 /* @flow */
 
-import Immutable from 'immutable';
+import {Immutable} from 'immutable';
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import Constants from '../constants/AppConstants';
 import BaseStore from './BaseStore';
