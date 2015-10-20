@@ -73,49 +73,48 @@ $columns: 7;
 .item {
   transition: transform .25s;
   border-radius: 2px;
-  // overflow: hidden;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 
-  // &:hover {
-  //   transform: scale(2.5);
-  //   box-shadow: 0 0 8vh 1vh black;
-  // }
+  &:hover {
+    transform: scale(2.5);
+    box-shadow: 0 0 8vh 1vh black;
+  }
 
-  // &:nth-child(1):hover {
-  //   transform: scale(2.5) translate(30%, 30%);
-  // }
+  &:nth-child(1):hover {
+    transform: scale(2.5) translate(30%, 30%);
+  }
 
-  // &:nth-child(n+2):nth-child(-n+7):hover {
-  //   transform: scale(2.5) translate(0, 30%);
-  // }
+  &:nth-child(n+2):nth-child(-n+7):hover {
+    transform: scale(2.5) translate(0, 30%);
+  }
 
-  // &:nth-child(8):hover {
-  //   transform: scale(2.5) translate(-30%, 30%);
-  // }
+  &:nth-child(8):hover {
+    transform: scale(2.5) translate(-30%, 30%);
+  }
 
-  // &:nth-child(9):hover,
-  // &:nth-child(17):hover, {
-  //   transform: scale(2.5) translate(30%, 0);
-  // }
+  &:nth-child(9):hover,
+  &:nth-child(17):hover, {
+    transform: scale(2.5) translate(30%, 0);
+  }
 
-  // &:nth-child(16):hover,
-  // &:nth-child(24):hover, {
-  //   transform: scale(2.5) translate(-30%, 00);
-  // }
+  &:nth-child(16):hover,
+  &:nth-child(24):hover, {
+    transform: scale(2.5) translate(-30%, 00);
+  }
 
-  // &:nth-child(25):hover {
-  //   transform: scale(2.5) translate(30%, -30%);
-  // }
+  &:nth-child(25):hover {
+    transform: scale(2.5) translate(30%, -30%);
+  }
 
-  // &:nth-child(n+26):nth-child(-n+31):hover {
-  //   transform: scale(2.5) translate(0, -30%);
-  // }
+  &:nth-child(n+26):nth-child(-n+31):hover {
+    transform: scale(2.5) translate(0, -30%);
+  }
 
-  // &:nth-child(32):hover {
-  //   transform: scale(2.5) translate(-30%, -30%);
-  // }
+  &:nth-child(32):hover {
+    transform: scale(2.5) translate(-30%, -30%);
+  }
 
 }
 
