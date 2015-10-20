@@ -4,6 +4,8 @@ node_js:
 deploy:
   local_dir: build
   provider: s3
+  on:
+    branch: master
   skip_cleanup: true
   bucket: pebblecode-wfh
   secret_access_key:
