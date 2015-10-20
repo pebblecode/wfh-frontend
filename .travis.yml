@@ -1,2 +1,10 @@
-deploy: {local_dir: build, provider: s3, skip_cleanup: true}
-script: [npm run build]
+--- 
+language: node_js
+node_js:
+  - "4.2"
+deploy: 
+  local_dir: build
+  provider: s3
+  skip_cleanup: true
+script: 
+  - "npm run build"
