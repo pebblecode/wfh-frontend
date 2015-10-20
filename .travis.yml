@@ -1,0 +1,5 @@
+ script: npm run build
+
+ provider: s3
+  skip_cleanup: true
+  local_dir: build
