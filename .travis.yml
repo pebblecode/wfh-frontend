@@ -1,5 +1,2 @@
- script: npm run build
-
- provider: s3
-  skip_cleanup: true
-  local_dir: build
+deploy: {local_dir: build, provider: s3, skip_cleanup: true}
+script: [npm run build]
