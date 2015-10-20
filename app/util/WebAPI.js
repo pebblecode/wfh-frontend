@@ -14,7 +14,8 @@ function JSONResponse(response) {
 export default {
 
   latestStatus(success, error) {
-    fetch('http://wfh2.pebblecode.net/workers')
+    // fetch('http://wfh2.pebblecode.net/workers')
+    fetch('http://spiderpig.pebblecode.net/workers')
       .then(JSONResponse)
       .then(success)
       .catch(error);
