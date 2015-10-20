@@ -55,3 +55,8 @@ export default class HomePage extends React.Component {
     );
   }
 }
+
+setInterval(function(){
+  UserStore.emitChange();
+}, 10000);
+
