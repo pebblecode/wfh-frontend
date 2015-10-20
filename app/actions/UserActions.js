@@ -11,13 +11,13 @@ export default {
     let successHandler = (statuses) => {
       AppDispatcher.dispatch({
         type: Constants.LOAD_USERS_SUCCESS,
-        data: statuses,
+        data: statuses
       });
     };
 
-    let failHandler = (statuses) => {
+    let failHandler = () => {
       AppDispatcher.dispatch({
-        type: Constants.LOAD_USERS_FAIL,
+        type: Constants.LOAD_USERS_FAIL
       });
     };
 
