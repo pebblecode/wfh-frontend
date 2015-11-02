@@ -6,8 +6,9 @@ import gravatar from 'gravatar';
 import './_Status.scss';
 
 export default (props) => {
-  const imgUrl = gravatar.url(props.email, { s: '400', r: 'pg', d: 'retro'}, true);
-
+  let imgUrl = gravatar.url(props.email, { s: '400', r: 'pg', d: 'retro'}, true);
+  let cacheBuster = Date.now();
+  imgUrl += `&v=${cacheBuster}`;
   return (
     <li className={'item ' + props.status.statusType }>
       <img className='mugshot' src={imgUrl}/>
