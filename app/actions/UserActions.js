@@ -4,8 +4,8 @@ import AppDispatcher from '../dispatcher/AppDispatcher';
 import Constants from '../constants/AppConstants';
 import WebAPI from '../util/WebAPI';
 
-function groupStatus(statuses,statusType) {
-  var s = statuses.filter(worker => {
+function groupStatus(statuses, statusType) {
+  const s = statuses.filter(worker => {
     return worker.status.statusType === statusType;
   });
 
@@ -14,11 +14,11 @@ function groupStatus(statuses,statusType) {
 
 export default {
 
-  getLatestStatuses(){
+  getLatestStatuses() {
 
-    let successHandler = (statuses)=>{
+    const successHandler = (statuses)=>{
 
-      let statusesGrouped = [];
+      const statusesGrouped = [];
 
       groupStatus(statuses, 'InOffice').forEach(w => statusesGrouped.push(w));
       groupStatus(statuses, 'OutOfOffice').forEach(w => statusesGrouped.push(w));
@@ -31,7 +31,7 @@ export default {
       });
     };
 
-    let failHandler = () => {
+    const failHandler = () => {
       AppDispatcher.dispatch({
         type: Constants.LOAD_USERS_FAIL
       });

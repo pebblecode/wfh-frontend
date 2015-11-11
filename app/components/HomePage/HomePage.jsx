@@ -15,16 +15,7 @@ export default class HomePage extends React.Component {
     this.changeListener = this.changeListener.bind(this);
   }
 
-  // METHODS
-
-  changeListener() {
-    this.setState({
-      statuses: UserStore.getData()
-    });
-  }
-
   // LIFECYCLE
-
   componentWillMount() {
     UserStore.addChangeListener(this.changeListener);
   }
@@ -37,9 +28,16 @@ export default class HomePage extends React.Component {
     UserStore.removeChangeListener(this.changeListener);
   }
 
-  // RENDER
+  // METHODS
+  changeListener() {
+    this.setState({
+      statuses: UserStore.getData()
+    });
+  }
 
+  // RENDER
   _renderStatuses() {
+
     return this.state.statuses.map((status, i) => {
       return <Status {...status} key={i} />;
     });
@@ -47,8 +45,8 @@ export default class HomePage extends React.Component {
 
   render() {
     return (
-      <div className='page__home'>
-        <ul className='grid'>
+      <div className={'page__home'}>
+        <ul className={'grid'}>
           {this._renderStatuses()}
         </ul>
       </div>
@@ -56,7 +54,7 @@ export default class HomePage extends React.Component {
   }
 }
 
-setInterval(function(){
+setInterval(() => {
   UserActions.getLatestStatuses();
 }, 10000);
 

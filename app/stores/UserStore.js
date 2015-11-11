@@ -26,20 +26,20 @@ class UserStore extends BaseStore {
 
 }
 
-let userStoreInstance = new UserStore();
+const userStoreInstance = new UserStore();
 
 userStoreInstance.dispatchToken = AppDispatcher.register((action) => {
 
   switch (action.type) {
     case Constants.LOAD_USERS_SUCCESS:
+      /* eslint new-cap: 0 */
       userStoreInstance.data = Immutable.List(action.data);
       userStoreInstance.emitChange();
+      break;
+    default:
       break;
   }
 
 });
 
 export default userStoreInstance;
-
-
-

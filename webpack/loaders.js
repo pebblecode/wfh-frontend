@@ -1,15 +1,15 @@
-var path = require('path');
-var pkg = require('../package.json');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const pkg = require('../package.json');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var DEBUG = process.env.NODE_ENV === 'development';
-var TEST = process.env.NODE_ENV === 'test';
+const DEBUG = process.env.NODE_ENV === 'development';
+const TEST = process.env.NODE_ENV === 'test';
 
-var jsxLoader;
-var sassLoader;
-var cssLoader;
-var fileLoader = 'file-loader?name=[path][name].[ext]';
-var htmlLoader = [
+let jsxLoader;
+let sassLoader;
+let cssLoader;
+const fileLoader = 'file-loader?name=[path][name].[ext]';
+const htmlLoader = [
   'file-loader?name=[path][name].[ext]',
   'template-html-loader?' + [
     'raw=true',
@@ -19,9 +19,9 @@ var htmlLoader = [
     'debug=' + DEBUG
   ].join('&')
 ].join('!');
-var jsonLoader = ['json-loader'];
+const jsonLoader = ['json-loader'];
 
-var sassParams = [
+const sassParams = [
   'outputStyle=expanded',
   'includePaths[]=' + path.resolve(__dirname, '../app/scss'),
   'includePaths[]=' + path.resolve(__dirname, '../node_modules')
@@ -59,7 +59,7 @@ if (DEBUG || TEST) {
   ].join('!'));
 }
 
-var loaders = [
+const loaders = [
   {
     test: /\.jsx?$/,
     exclude: /node_modules/,

@@ -1,4 +1,4 @@
-var config = require('./config');
+const config = require('./config');
 
 delete config.context;
 delete config.entry;

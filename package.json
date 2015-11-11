@@ -44,13 +44,15 @@
     "babel-runtime": "^5.6.15",
     "chai": "^3.0.0",
     "css-loader": "^0.15.2",
-    "eslint": "^0.24.0",
+    "eslint": "^1.9.0",
+    "eslint-config-pebblecode": "^1.0.0",
     "eslint-plugin-react": "^2.6.4",
     "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
     "flowcheck": "^0.2.7",
     "flowcheck-loader": "^1.0.0",
     "glob": "^5.0.13",
+    "history": "^1.13.0",
     "html-loader": "^0.3.0",
     "json-loader": "^0.5.2",
     "karma": "^0.12.37",
@@ -83,54 +85,5 @@
   },
   "engines": {
     "node": ">=0.12.0"
-  },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "node": true,
-      "es6": true
-    },
-    "ecmaFeatures": {
-      "modules": true,
-      "jsx": true
-    },
-    "globals": {
-      "describe": true,
-      "it": true,
-      "sinon": true
-    },
-    "parser": "babel-eslint",
-    "plugins": [
-      "react"
-    ],
-    "rules": {
-      "strict": [
-        2,
-        "global"
-      ],
-      "indent": [
-        2,
-        2
-      ],
-      "quotes": [
-        2,
-        "single"
-      ],
-      "no-underscore-dangle": 0,
-      "react/display-name": 0,
-      "react/jsx-quotes": 1,
-      "react/jsx-no-undef": 1,
-      "react/jsx-sort-props": 1,
-      "react/jsx-uses-react": 1,
-      "react/jsx-uses-vars": 1,
-      "react/no-did-mount-set-state": 1,
-      "react/no-did-update-set-state": 1,
-      "react/no-multi-comp": 1,
-      "react/no-unknown-property": 1,
-      "react/prop-types": 0,
-      "react/react-in-jsx-scope": 1,
-      "react/self-closing-comp": 1,
-      "react/wrap-multilines": 1
-    }
   }
 }
