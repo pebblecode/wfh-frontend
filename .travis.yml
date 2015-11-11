@@ -14,3 +14,10 @@ deploy:
     secure: VYKvAgo7/6C9z/u4CYGGdetR/q/Jze8n/IXmcoiPh35GKfqnSFQnP3YZOo1kfD9oIH5NayKfbhiO7pNMwQy39hQgAcP1lpgGBphuPcg35BLwcbllQCehlOAXF3rv9a+jRKjI4V0pSYq+ZQxiQ6z/e6Qjk9rxvTHwWxKDZ68rHdVfRtztniQE38xVkzAZ13b92+fq+gwGgRHrUdLrWhI2wx1u4zHcdzuUNie34kPddcF6ODHrA6WAWGtXj58YJ24N8Lr3YBModCRbpL8l5QTvk+mAwEirOaFxwrKcVBRqUoB4EpRcyNPYmcB/vwEbqEtF5SsFwt9ECqMH71zDRv04EvWfQaKngvrrjQ7NzakFXeG9aU8Iy0CqaEwuavx+QSvvHkmlL1Ak5/oN0sWEdo+jpV8T5KmcEgCEJF93oI412J5okq1ZhaXJ/75oMOsV7LHbLJUwTD63YmeUuzuWEi4ya2Nwi8Nvm5i2Asz8pXh2P9RXbzRulGzC22iTqXA+ctJnVRRCj57221BsNTPFEoNkmon2uc2v+E1T2GpcQQ7wVbTLW5IgJpSeJoalpFszfwciW9QPQbbkHvQ7N4vx8IYdSR6kTgcD2rPgl32OQbXP+KPocofQrvJTw4TBixoqjZ48o5QYLB08bD+WsIc9LXjPpBKO2pcPS9la44zIRmynAmI=
 script:
 - npm run build
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-4.8
+    - g++-4.8
