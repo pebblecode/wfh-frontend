@@ -18,20 +18,20 @@ class TestStore extends BaseStore {
 
 describe('BaseStore', () => {
 
-  it('Should set, get and remove data', function() {
+  it('Should set, get and remove data', () => {
 
-    let store = new TestStore();
+    const store = new TestStore();
 
     expect(store.getAll()).to.eql([]);
 
-    let item = {
+    const item = {
       foo: 'bar'
     };
 
     store.setAll([item]);
     expect(store.getAll()).to.eql([item]);
 
-    let item2 = {
+    const item2 = {
       foobaz: 'bar'
     };
 
@@ -45,8 +45,8 @@ describe('BaseStore', () => {
 
   it('Should call the change listener when data changes', () => {
 
-    let store = new TestStore();
-    let onChange = sinon.spy();
+    const store = new TestStore();
+    const onChange = sinon.spy();
     store.addChangeListener(onChange);
 
     store.setAll([{
@@ -63,8 +63,8 @@ describe('BaseStore', () => {
 
   it('Should remove the change listener', () => {
 
-    let store = new TestStore();
-    let onChange = sinon.spy();
+    const store = new TestStore();
+    const onChange = sinon.spy();
     store.addChangeListener(onChange);
     store.setAll([{
       foo: 'bar'

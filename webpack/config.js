@@ -1,17 +1,17 @@
-var path = require('path');
-var util = require('util');
-var autoprefixer = require('autoprefixer-core');
-var pkg = require('../package.json');
+const path = require('path');
+const util = require('util');
+const autoprefixer = require('autoprefixer-core');
+const pkg = require('../package.json');
 
-var loaders = require('./loaders');
-var plugins = require('./plugins');
+const loaders = require('./loaders');
+const plugins = require('./plugins');
 
-var DEBUG = process.env.NODE_ENV === 'development';
-var TEST = process.env.NODE_ENV === 'test';
+const DEBUG = process.env.NODE_ENV === 'development';
+const TEST = process.env.NODE_ENV === 'test';
 
-var jsBundle = path.join('js', util.format('[name].%s.js', pkg.version));
+const jsBundle = path.join('js', util.format('[name].%s.js', pkg.version));
 
-var entry = {
+const entry = {
   app: ['./app.jsx']
 };
 
@@ -26,7 +26,7 @@ if (DEBUG) {
   entry.app.push('webpack/hot/dev-server');
 }
 
-var config = {
+const config = {
   context: path.join(__dirname, '../app'),
   cache: DEBUG,
   debug: DEBUG,

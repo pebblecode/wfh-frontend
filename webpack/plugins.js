@@ -1,15 +1,15 @@
-var path = require('path');
-var util = require('util');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var webpack = require('webpack');
-var pkg = require('../package.json');
+const path = require('path');
+const util = require('util');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
+const pkg = require('../package.json');
 
-var DEBUG = process.env.NODE_ENV === 'development';
-var TEST = process.env.NODE_ENV === 'test';
+const DEBUG = process.env.NODE_ENV === 'development';
+const TEST = process.env.NODE_ENV === 'test';
 
-var cssBundle = path.join('css', util.format('[name].%s.css', pkg.version));
+const cssBundle = path.join('css', util.format('[name].%s.css', pkg.version));
 
-var plugins = [
+const plugins = [
   new webpack.optimize.OccurenceOrderPlugin()
 ];
 if (DEBUG) {

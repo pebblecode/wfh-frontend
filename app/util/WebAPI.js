@@ -5,7 +5,7 @@ import 'whatwg-fetch';
 function JSONResponse(response) {
   try {
     return response.json();
-  } catch(e) {
+  } catch (e) {
     throw new Error(e);
   }
 }
