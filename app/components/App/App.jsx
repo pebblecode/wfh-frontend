@@ -4,10 +4,7 @@ import './_App.scss';
 
 import React from 'react';
 
-export default class App extends React.Component {
-  propTypes = {
-    children: React.PropTypes.node
-  }
+class App extends React.Component {
 
   render() {
     return (
@@ -16,4 +13,11 @@ export default class App extends React.Component {
       </div>
     );
   }
+
 }
+
+App.propTypes = {
+  children: React.PropTypes.node
+};
+
+export default App;

@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require('path');
 const util = require('util');
 const autoprefixer = require('autoprefixer-core');
