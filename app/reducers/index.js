@@ -1,4 +1,3 @@
-// import {List, Map} from 'immutable';
 import {REQUEST_LOAD_USERS, RECEIVE_USERS, REQUEST_INTERVAL_START} from '../actions';
 
 export default function usersReducer(state = {
