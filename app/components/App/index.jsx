@@ -5,7 +5,7 @@ import './_App.scss';
 import {connect} from 'react-redux';
 import React, {Component, PropTypes} from 'react';
 import Status from '../Status';
-// import UserStore from '../../stores/UserStore';
+
 import {fetchStatusesOnInterval} from '../../actions';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
   }
-  
+
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(fetchStatusesOnInterval());

@@ -4,7 +4,6 @@ import thunkMiddleware from 'redux-thunk';
 
 const createStoreWithMiddleware = applyMiddleware(
   thunkMiddleware
-  // createLogger()
 )(createStore);
 
 export default function configureStore() {
