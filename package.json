@@ -27,7 +27,10 @@
     "qs": "^5.2.0",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
+    "react-redux": "^4.0.0",
     "react-router": "^1.0.0-rc2",
+    "redux": "^3.0.4",
+    "redux-thunk": "^1.0.0",
     "whatwg-fetch": "^0.9.0"
   },
   "devDependencies": {

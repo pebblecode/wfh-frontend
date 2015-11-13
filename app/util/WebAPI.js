@@ -12,11 +12,9 @@ function JSONResponse(response) {
 
 export default {
 
-  latestStatus(success, error) {
-    fetch('API_URL/workers')
-      .then(JSONResponse)
-      .then(success)
-      .catch(error);
+  latestStatus() {
+    return fetch('API_URL/workers')
+      .then(JSONResponse);
   }
 
 };

@@ -1,0 +1,51 @@
+/* @flow */
+
+// import AppDispatcher from '../dispatcher/AppDispatcher';
+
+import WebAPI from '../util/WebAPI';
+
+function groupStatus(statuses, statusType) {
+  return statuses.filter(worker => worker.status.statusType === statusType);
+}
+
+export const LOAD_USERS = 'LOAD_USERS';
+export const LOAD_USERS_SUCCESS = 'LOAD_USERS_SUCCESS';
+export const RECEIVE_USERS = 'RECEIVE_USERS';
+export const LOAD_USERS_FAIL = 'LOAD_USERS_FAIL';
+export const REQUEST_LOAD_USERS = 'REQUEST_LOAD_USERS';
+
+
+export function getLatestStatuses() {
+
+  return (dispatch) => {
+
+    dispatch({
+      type: REQUEST_LOAD_USERS
+    });
+
+    return WebAPI.latestStatus()
+      .then((statuses) => {
+
+        const statusesGrouped = [];
+
+        groupStatus(statuses, 'InOffice').forEach(w => statusesGrouped.push(w));
+        groupStatus(statuses, 'OutOfOffice').forEach(w => statusesGrouped.push(w));
+        groupStatus(statuses, 'Holiday').forEach(w => statusesGrouped.push(w));
+        groupStatus(statuses, 'Sick').forEach(w => statusesGrouped.push(w));
+
+        dispatch({
+          type: RECEIVE_USERS,
+          users: statusesGrouped
+        });
+
+      })
+      .catch((err) => {
+        dispatch({
+          type: LOAD_USERS_FAIL,
+          error: err
+        });
+      });
+
+  };
+
+};
