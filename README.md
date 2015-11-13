@@ -3,3 +3,8 @@
 # Developmemt
 
 `npm install && npm start`
+
+# Deployment, use travis ci and host on s3
+`npm run build`
+
+# LICENSE
