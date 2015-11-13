@@ -12,11 +12,9 @@ function JSONResponse(response) {
 
 export default {
 
-  latestStatus(success, error) {
-    fetch('https://pebblecode-wfh.herokuapp.com/workers')
-      .then(JSONResponse)
-      .then(success)
-      .catch(error);
+  latestStatus() {
+    return fetch('https://pebblecode-wfh.herokuapp.com/workers')
+      .then(JSONResponse);
   }
 
 };

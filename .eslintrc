@@ -2,5 +2,8 @@
   "extends":"pebblecode",
   "globals":{
     "sinon": true
+  },
+  "rules":{
+    new-cap: 0 
   }
 }
