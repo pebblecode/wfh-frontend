@@ -1,13 +1,20 @@
 // import {List, Map} from 'immutable';
-import {REQUEST_LOAD_USERS, RECEIVE_USERS} from '../actions';
+import {REQUEST_LOAD_USERS, RECEIVE_USERS, REQUEST_INTERVAL_START} from '../actions';
 
 export default function usersReducer(state = {
   isFetching: false,
   didInvalidate: false,
-  users: []
+  users: [],
+  intervalRef: null
 }, action) {
 
   switch (action.type) {
+    case REQUEST_INTERVAL_START:
+
+      return Object.assign({}, state, {
+        intervalRef: action.intervalRef
+      });
+
     case REQUEST_LOAD_USERS:
 
       return Object.assign({}, state, {

@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import React, {Component, PropTypes} from 'react';
 import Status from '../Status';
 // import UserStore from '../../stores/UserStore';
-import {getLatestStatuses} from '../../actions';
+import {fetchStatusesOnInterval} from '../../actions';
 
 class App extends Component {
 
@@ -16,7 +16,7 @@ class App extends Component {
   
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(getLatestStatuses());
+    dispatch(fetchStatusesOnInterval());
   }
 
   // RENDER
