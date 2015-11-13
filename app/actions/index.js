@@ -1,14 +1,11 @@
 /* @flow */
-
-// import AppDispatcher from '../dispatcher/AppDispatcher';
-
 import WebAPI from '../util/WebAPI';
 
 function groupStatus(statuses, statusType) {
   return statuses.filter(worker => worker.status.statusType === statusType);
 }
 
-const INTERVAL = 10*1000;
+const INTERVAL = 10 * 1000;
 
 export const LOAD_USERS = 'LOAD_USERS';
 export const LOAD_USERS_SUCCESS = 'LOAD_USERS_SUCCESS';
@@ -56,7 +53,6 @@ export function fetchStatusesOnInterval() {
 
   return (dispatch) => {
 
-    debugger;
     const ref = setInterval(() => {
       getLatestStatuses()(dispatch);
     }, INTERVAL);

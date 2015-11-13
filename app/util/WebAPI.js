@@ -13,7 +13,8 @@ function JSONResponse(response) {
 export default {
 
   latestStatus() {
-    return fetch('https://pebblecode-wfh.herokuapp.com/workers')
+    console.log(API_URL);
+    return fetch(`${API_URL}/workers`)
       .then(JSONResponse);
   }
 
