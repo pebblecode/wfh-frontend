@@ -1,6 +1,6 @@
 # WFH Front-End
 
-![Build](https://travis-ci.org/pebblecode/wfh-front-end.svg)
+![Build](https://travis-ci.org/pebblecode/wfh-frontend.svg)
 
 A dashboard to let you quickly see where your colleagues are: in the office, working from elsewhere, or on holiday. Built with React, Redux and Webpack.
 
@@ -38,5 +38,5 @@ TV Mode: Avoid burn in on office displays using animations. A way to cycle throu
 
 ## LICENSE
 
-MIT
+MIT 
 
