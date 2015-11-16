@@ -8,6 +8,8 @@ Designed to be used with the [WFH API](https://github.com/pebblecode/wfh-api).
 
 For an overview, see our [blog post](http://pebblecode.com/blog/november-wfh-slack/).
 
+![example](http://i.imgur.com/TL3YusG.png)
+
 ## Development
 
 You will need the WFH API to be running alongside. See [its own README](https://github.com/pebblecode/wfh-api/blob/master/README.md)
