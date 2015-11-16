@@ -21,7 +21,7 @@ for the relevant instructions. Then you can run up this front-end with:
 
 We use Travis CI and host statically on Amazon S3.
 
-`npm run build`
+This creates the built version for Production: `npm run build`
 
 Update the .travis.yml according to your S3 config. we used `travis encrypt ` here.
 
