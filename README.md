@@ -1,4 +1,4 @@
-![Build](https://api.travis-ci.org/pebblecode/wfh_frontend.svg?token=F5kJ2zgCzNfgE9rzZNys)
+![Build](https://api.travis-ci.com/pebblecode/wfh-frontend.svg?token=F5kJ2zgCzNfgE9rzZNys)
 
 # Developmemt
 

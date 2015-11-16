@@ -1,6 +1,7 @@
 {
   "extends":"pebblecode",
   "globals":{
-    "sinon": true
+    "sinon": true,
+    "API_URL": true
   }
 }

@@ -13,7 +13,6 @@ function JSONResponse(response) {
 export default {
 
   latestStatus() {
-    console.log(API_URL);
     return fetch(`${API_URL}/workers`)
       .then(JSONResponse);
   }
