@@ -10,13 +10,9 @@ import {fetchStatusesOnInterval} from '../../actions';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(fetchStatusesOnInterval());
+    dispatch(fetchStatusesOnInterval);
   }
 
   // RENDER

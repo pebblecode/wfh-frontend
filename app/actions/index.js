@@ -14,54 +14,46 @@ export const LOAD_USERS_FAIL = 'LOAD_USERS_FAIL';
 export const REQUEST_LOAD_USERS = 'REQUEST_LOAD_USERS';
 export const REQUEST_INTERVAL_START = 'REQUEST_INTERVAL_START';
 
-export function getLatestStatuses() {
+export function getLatestStatuses(dispatch) {
 
-  return (dispatch) => {
+  dispatch({
+    type: REQUEST_LOAD_USERS
+  });
 
-    dispatch({
-      type: REQUEST_LOAD_USERS
-    });
+  return WebAPI.latestStatus()
+    .then((statuses) => {
 
-    return WebAPI.latestStatus()
-      .then((statuses) => {
+      const statusesGrouped = [];
 
-        const statusesGrouped = [];
+      groupStatus(statuses, 'InOffice').forEach(w => statusesGrouped.push(w));
+      groupStatus(statuses, 'OutOfOffice').forEach(w => statusesGrouped.push(w));
+      groupStatus(statuses, 'Holiday').forEach(w => statusesGrouped.push(w));
+      groupStatus(statuses, 'Sick').forEach(w => statusesGrouped.push(w));
 
-        groupStatus(statuses, 'InOffice').forEach(w => statusesGrouped.push(w));
-        groupStatus(statuses, 'OutOfOffice').forEach(w => statusesGrouped.push(w));
-        groupStatus(statuses, 'Holiday').forEach(w => statusesGrouped.push(w));
-        groupStatus(statuses, 'Sick').forEach(w => statusesGrouped.push(w));
-
-        dispatch({
-          type: RECEIVE_USERS,
-          users: statusesGrouped
-        });
-
-      })
-      .catch((err) => {
-        dispatch({
-          type: LOAD_USERS_FAIL,
-          error: err
-        });
+      dispatch({
+        type: RECEIVE_USERS,
+        users: statusesGrouped
       });
 
-  };
-
+    })
+    .catch((err) => {
+      dispatch({
+        type: LOAD_USERS_FAIL,
+        error: err
+      });
+    });
 }
 
-export function fetchStatusesOnInterval() {
+export function fetchStatusesOnInterval(dispatch) {
 
-  return (dispatch) => {
+  const ref = setInterval(() => {
+    getLatestStatuses(dispatch);
+  }, INTERVAL);
 
-    const ref = setInterval(() => {
-      getLatestStatuses()(dispatch);
-    }, INTERVAL);
+  dispatch({
+    type: REQUEST_INTERVAL_START,
+    intervalRef: ref
+  });
 
-    dispatch({
-      type: REQUEST_INTERVAL_START,
-      intervalRef: ref
-    });
-
-    return getLatestStatuses()(dispatch);
-  };
+  return getLatestStatuses(dispatch);
 }
