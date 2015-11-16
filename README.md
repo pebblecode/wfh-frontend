@@ -31,7 +31,7 @@ Update the .travis.yml according to your S3 config. we used `travis encrypt ` he
  - We have this on a screen in the office. Running on a raspberry pi A+.
  - On amazon there is a [Shopping list](http://www.amazon.co.uk/registry/wishlist/KPLLE5XXL6DK) to help find the bits you need. We actually didn't need the Power adapter as the USB is directly plugged into the TV.
  - Once you have your pi delivered, (we used prime as we were impatient!) Flash the SD card with: [Raspbian](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) 
- - Then follow the steps [here](https://github.com/pebblecode/raspberry-pi-kiosk-screen/tree/feature/updates-to-lxsession-lxde-path#epiphany-browser) to boot the device into fullscreen kiosk mode.
+ - Then follow the steps [here](https://github.com/elalemanyo/raspberry-pi-kiosk-screen#epiphany-browser) to boot the device into fullscreen kiosk mode.
 
 ## Next Steps
 TV Mode: Avoid burn in on office displays using animations. A way to cycle through users not in view to allow for larger teams.
