@@ -1,6 +1,6 @@
 {
   "name": "wfh-frontend",
-  "version": "0.0.16",
+  "version": "1.0.0",
   "config": {
     "buildDir": "./build",
     "buildDirTests": "./build_tests",
