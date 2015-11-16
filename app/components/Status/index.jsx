@@ -3,8 +3,6 @@
 import React from 'react';
 import gravatar from 'gravatar';
 
-import './_Status.scss';
-
 export default (props) => {
   let imgUrl = gravatar.url(props.email, { s: '400', r: 'pg', d: 'retro'}, true);
   const cacheBuster = Date.now();

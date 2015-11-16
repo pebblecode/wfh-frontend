@@ -1,7 +1,5 @@
 /* @flow */
 
-import './_App.scss';
-
 import {connect} from 'react-redux';
 import React, {Component, PropTypes} from 'react';
 import Status from '../Status';
