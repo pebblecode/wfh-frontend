@@ -16,8 +16,8 @@ class App extends Component {
   // RENDER
   _renderStatuses() {
 
-    return this.props.users.map((status, i) => {
-      return <Status {...status} key={i} />;
+    return this.props.users.map((status) => {
+      return <Status {...status} key={status.email} />;
     });
   }
 
